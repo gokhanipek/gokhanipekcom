@@ -1567,6 +1567,7 @@ body.is-preload #header .content .inner {
 /* Main */
 
 #main {
+  display: flex;
   -moz-flex-grow: 1;
   -webkit-flex-grow: 1;
   -ms-flex-grow: 1;
@@ -1597,6 +1598,7 @@ body.is-preload #header .content .inner {
 }
 
 #main article {
+  display: block;
   -moz-transform: translateY(0.25rem);
   -webkit-transform: translateY(0.25rem);
   -ms-transform: translateY(0.25rem);

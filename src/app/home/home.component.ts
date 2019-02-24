@@ -32,4 +32,12 @@ export class HomeComponent {
     this.main = true;
     this.header = false;
   }
+  close(){
+    this.tabAbout = false;
+    this.tabIntro = false;
+    this.tabContact = false;
+    this.main = false;
+    this.header = true;
+    
+  }
 }

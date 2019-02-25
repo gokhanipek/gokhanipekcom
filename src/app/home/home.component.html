@@ -29,19 +29,7 @@
     <!-- Intro -->
     <div *ngIf="tabIntro" [@signal]="signal">
       <article id="intro">
-        <h2 class="major">Intro</h2>
-        <span class="image main"><img src="../../assets/images/profile.jpg" alt=""/></span>
-        <p>
-          Hello, I am Gökhan.
-        </p>
-        <p>
-          I am a Front End / Javascript Developer based in Istanbul/Turkey. You can check my experience and projects
-          through my LinkedIn account or just stalk me from the about section.
-        </p>
-        <p>
-          I also have a Master's Thesis on Black Holes. Pretty cool stuff :)
-        </p>
-
+        <app-intro></app-intro>
         <i class="close" (click)="close()">Close</i>
       </article>
     </div>
@@ -49,11 +37,7 @@
     <!-- About -->
     <div *ngIf="tabAbout" [@signal]="signal">
       <article id="about">
-        <h2 class="major">Story</h2>
-        <span class="image main"><img src="../../assets/images/pic03.jpg" alt=""/></span>
-        <p>
-          Instagram, Twitter and Stuff
-        </p>
+        <app-story></app-story>
         <div class="close" (click)="close()">Close</div>
       </article>
     </div>
@@ -61,11 +45,7 @@
     <!-- Blog -->
     <div *ngIf="tabBlog" class="blog" [@signal]="signal">
       <article id="blog">
-        <h2 class="major">Blog</h2>
-        <span class="image main"><img src="../../assets/images/profile.jpg" alt=""/></span>
-        <p>
-          Articles and stuff
-        </p>
+        <app-blog></app-blog>
         <i class="close" (click)="close()">Close</i>
       </article>
     </div>
@@ -73,41 +53,7 @@
     <!-- Contact -->
     <div *ngIf="tabContact" [@signal]="signal">
       <article id="contact">
-        <h2 class="major">Contact</h2>
-        <form method="post" action="#">
-          <div class="fields">
-            <div class="field half">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div class="field half">
-              <label for="email">Email</label>
-              <input type="text" name="email" id="email" />
-            </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
-            </div>
-          </div>
-          <ul class="actions">
-            <li><input type="submit" value="Send Message" class="primary" /></li>
-            <li><input type="reset" value="Reset" /></li>
-          </ul>
-        </form>
-        <ul class="icons">
-          <li>
-            <a class="icon fa-twitter"><span class="label">Twitter</span></a>
-          </li>
-          <li>
-            <a class="icon fa-facebook"><span class="label">Facebook</span></a>
-          </li>
-          <li>
-            <a class="icon fa-instagram"><span class="label">Instagram</span></a>
-          </li>
-          <li>
-            <a class="icon fa-github"><span class="label">GitHub</span></a>
-          </li>
-        </ul>
+        <app-contact></app-contact>
         <div class="close" (click)="close()">Close</div>
       </article>
     </div>

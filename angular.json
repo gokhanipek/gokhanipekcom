@@ -24,13 +24,18 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "../gokhan-web/node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss",
-              "src/assets/css/main.css",
-              "src/assets/css/font-awesome.css",
-              "src/assets/css/noscript.css",
-              "src/assets/css/custom.css"
+              "src/assets/css/font-awesome.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "../gokhan-web/node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/browser.min.js",
+              "src/assets/js/breakpoints.min.js",
+              "src/assets/js/util.js",
+              "src/assets/js/main.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

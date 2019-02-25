@@ -1,7 +1,9 @@
+{{ signal }}
+
 <!-- Wrapper -->
 <div id="wrapper">
   <!-- Header -->
-  <header id="header" *ngIf="header">
+  <header id="header" *ngIf="header" [@signal]="signal">
     <div class="logo">
       <span class="astronaut">
         <img src="../../assets/images/astro.png" />
@@ -24,7 +26,7 @@
   <!-- Main -->
   <div id="main" *ngIf="main">
     <!-- Intro -->
-    <div *ngIf="tabIntro">
+    <div *ngIf="tabIntro" [@signal]="signal">
       <article id="intro">
         <h2 class="major">Intro</h2>
         <span class="image main"><img src="../../assets/images/pic01.jpg" alt=""/></span>
@@ -47,7 +49,7 @@
     </div>
 
     <!-- About -->
-    <div *ngIf="tabAbout">
+    <div *ngIf="tabAbout" [@signal]="signal">
       <article id="about">
         <h2 class="major">About</h2>
         <span class="image main"><img src="../../assets/images/pic03.jpg" alt=""/></span>
@@ -62,7 +64,7 @@
     </div>
 
     <!-- Contact -->
-    <div *ngIf="tabContact">
+    <div *ngIf="tabContact" [@signal]="signal">
       <article id="contact">
         <h2 class="major">Contact</h2>
         <form method="post" action="#">

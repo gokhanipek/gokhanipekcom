@@ -21,10 +21,37 @@
   z-index: 2;
 }
 
+#main {
+  width: 100%;
+}
+
+#main .blog {
+  width: 80%;
+}
+#main .blog article {
+  width: 100%;
+}
+
 #main article .close:before {
   background-image: url(../images/close.png);
 }
 
 #main article {
+  padding: 2rem 2.5rem 2rem 2.5rem;
+  margin: 0;
   transition: all 2s;
+}
+
+.image.main {
+  display: block;
+  margin: 2.5rem 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image.main img {
+  width: 100%;
+  margin-top: -180px;
+  transform: rotateZ(0.7deg);
 }

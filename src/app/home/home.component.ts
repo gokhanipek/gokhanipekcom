@@ -22,6 +22,7 @@ export class HomeComponent {
   tabIntro = false;
   tabAbout = false;
   tabContact = false;
+  tabBlog = false;
   main = false;
   header = true;
   signal = false;
@@ -29,6 +30,7 @@ export class HomeComponent {
     this.tabIntro = true;
     this.tabAbout = false;
     this.tabContact = false;
+    this.tabBlog = false;
     this.main = true;
     this.header = false;
     this.signal = true;
@@ -36,6 +38,7 @@ export class HomeComponent {
   openAbout() {
     this.tabIntro = false;
     this.tabAbout = true;
+    this.tabBlog = false;
     this.tabContact = false;
     this.main = true;
     this.header = false;
@@ -45,6 +48,16 @@ export class HomeComponent {
     this.tabIntro = false;
     this.tabAbout = false;
     this.tabContact = true;
+    this.tabBlog = false;
+    this.main = true;
+    this.header = false;
+    this.signal = true;
+  }
+  openBlog() {
+    this.tabIntro = false;
+    this.tabAbout = false;
+    this.tabContact = false;
+    this.tabBlog = true;
     this.main = true;
     this.header = false;
     this.signal = true;
@@ -52,6 +65,7 @@ export class HomeComponent {
   close() {
     this.signal = false;
     this.tabAbout = false;
+    this.tabBlog = false;
     this.tabIntro = false;
     this.tabContact = false;
     this.main = false;

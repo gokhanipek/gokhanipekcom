@@ -9,9 +9,18 @@ import { IntroComponent } from './home/intro/intro.component';
 import { StoryComponent } from './home/story/story.component';
 import { BlogComponent } from './home/blog/blog.component';
 import { ContactComponent } from './home/contact/contact.component';
+import { ParticlesComponent } from './particles/particles.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, IntroComponent, StoryComponent, BlogComponent, ContactComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    IntroComponent,
+    StoryComponent,
+    BlogComponent,
+    ContactComponent,
+    ParticlesComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],

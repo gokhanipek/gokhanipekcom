@@ -26,6 +26,7 @@ export class HomeComponent {
   main = false;
   header = true;
   signal = false;
+
   openIntro() {
     this.tabIntro = true;
     this.tabAbout = false;

@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { fromEvent } from 'rxjs';
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-particles',
@@ -7,10 +8,10 @@ import { fromEvent } from 'rxjs';
   styleUrls: ['./particles.component.scss'],
 })
 export class ParticlesComponent implements AfterViewInit, OnDestroy {
-  number = 250;
-  linkDistance = 80;
+  number = 150;
+  linkDistance = 100;
   linkWidth = 0.4;
-  moveSpeed = 0.1;
+  moveSpeed = 0.4;
   size = 2;
   repulseDistance = 100;
   repulseDuration = 1;
@@ -168,15 +169,16 @@ export class ParticlesComponent implements AfterViewInit, OnDestroy {
 
   linkParticles(p1: SingleParticle, p2: SingleParticle) {
     const dist = Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
-    if (dist <= this.linkDistance) {
+    if (dist <= this.linkDistance + 100) {
       if (0.7 - dist / (1 / 0.7) / this.linkDistance > 0) {
-        this.context.strokeStyle = 'rgba(255, 255,255, .1)';
         this.context.lineWidth = this.linkWidth;
         this.context.beginPath();
         this.context.moveTo(p1.x, p1.y);
         this.context.lineTo(p2.x, p2.y);
         this.context.stroke();
         this.context.closePath();
+        this.context.strokeStyle = 'rgba(255, 255,255, .1)';
+
       }
     }
   }

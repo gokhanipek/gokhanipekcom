@@ -10,9 +10,9 @@ import { style } from '@angular/animations';
 export class ParticlesComponent implements AfterViewInit, OnDestroy {
   number = 150;
   linkDistance = 100;
-  linkWidth = 0.4;
-  moveSpeed = 0.4;
-  size = 2;
+  linkWidth = 0.8;
+  moveSpeed = 1;
+  size = 1;
   repulseDistance = 100;
   repulseDuration = 1;
   canvasHeight = 0;

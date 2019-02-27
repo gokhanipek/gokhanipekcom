@@ -13,7 +13,7 @@ export class ParticlesComponent implements AfterViewInit, OnDestroy {
   linkWidth = 0.8;
   moveSpeed = 1;
   size = 1;
-  repulseDistance = 100;
+  repulseDistance = 110;
   repulseDuration = 1;
   canvasHeight = 0;
   canvasWidth = 0;
@@ -178,7 +178,6 @@ export class ParticlesComponent implements AfterViewInit, OnDestroy {
         this.context.stroke();
         this.context.closePath();
         this.context.strokeStyle = 'rgba(255, 255,255, .1)';
-
       }
     }
   }

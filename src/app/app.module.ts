@@ -10,6 +10,7 @@ import { StoryComponent } from './home/story/story.component';
 import { BlogComponent } from './home/blog/blog.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { ParticlesComponent } from './particles/particles.component';
+import { ArticlesComponent } from './home/blog/articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ParticlesComponent } from './particles/particles.component';
     BlogComponent,
     ContactComponent,
     ParticlesComponent,
+    ArticlesComponent
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

@@ -1,5 +1,5 @@
 
-<a href="https://www.grizzlybearblues.com/2018/9/25/17902092/jaren-half-man-half-superstar-jackson" *ngFor="let article of articles" class="">
+<a href="{{article.extUrl}}" *ngFor="let article of articles" class="">
     <h4 class="major">{{article.title}}</h4>
     <span class="image main"><img src="{{ article.bannerUrl }}" alt=""/></span>
     <p>{{ article.text | slice:0:300  }}...(Read More)</p>

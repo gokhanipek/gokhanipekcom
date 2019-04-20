@@ -5,4 +5,5 @@ export interface Articles {
     bannerUrl?: string[];
     footerInfo?: string;
     imgAlt?: string;
+    extUrl: string;
 }

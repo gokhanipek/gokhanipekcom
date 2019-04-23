@@ -16,6 +16,11 @@ import { Articles } from 'src/app/models/articles.model';
         top: -50%;
     }
 
+    .major { 
+        display: block;
+        width: 100%;
+    }
+
     `
 ]
 })

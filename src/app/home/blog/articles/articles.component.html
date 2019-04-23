@@ -1,7 +1,6 @@
 
 <a href="{{article.extUrl}}" *ngFor="let article of articles" class="">
     <h4 class="major">{{article.title}}</h4>
-    <span class="image main"><img src="{{ article.bannerUrl }}" alt=""/></span>
     <p>{{ article.text | slice:0:300  }}...(Read More)</p>
 </a>
     

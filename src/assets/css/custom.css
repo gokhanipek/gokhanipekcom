@@ -69,11 +69,8 @@
 
 .articleWrapper article {
   width: 100%;
-  height: 550px !important;
-  overflow-y: scroll;
 }
 
-.blog {
-  max-height: 550px !important;
-  overflow-y: scroll;
+#blog {
+  height: 550px !important;
 }

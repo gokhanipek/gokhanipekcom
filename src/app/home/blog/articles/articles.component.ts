@@ -29,11 +29,11 @@ export class ArticlesComponent {
   articles: Articles[] = [
     {
       id: 1,
-      title: 'Renderer2 Nedir? Nasil Kullanilir?',
-      text: `Eğer Ön Yüz Geliştirme kariyerinize benim gibi henüz Javascript konusunda yetkin bile olmamanıza rağmen Jquery ile girmiş ve ön yüzde binbir türlü animasyonu yapabiliyor, butonları zıplatıyor, günleri geceleri simule ediyorsanız, Angular gibi bir framework’e geçiş yaptığınızda ilk zamanlar aklınızda şu soru oluyor: “Uygulamamda DOM üzerinde değişiklik yapmak zorundayım, ne kullanabilirim?”`,
-      bannerUrl: ['https://cdn-images-1.medium.com/max/800/1*q_X46je2gMh3KJClkAtSnw.png'],
+      title: 'Using Renderer2 in Angular',
+      text: `a.k.a. this is how we manipulate DOM in Angular`,
+      bannerUrl: ['https://cdn-images-1.medium.com/max/1600/1*-b5enQnC74Yym5c9-AFiQg.png'],
       imgAlt: 'angular',
-      extUrl: `https://medium.com/@gipek03/renderer2-nedir-nasil-kullanilir-579c4a393823`,
+      extUrl: `https://itnext.io/using-renderer2-in-angular-8f80da6756f8`,
     },
     {
       id: 2,

@@ -8,9 +8,9 @@ import { style } from '@angular/animations';
   styleUrls: ['./particles.component.scss'],
 })
 export class ParticlesComponent implements AfterViewInit, OnDestroy {
-  number = 150;
+  number = 660;
   linkDistance = 100;
-  linkWidth = 0.8;
+  linkWidth = 0;
   moveSpeed = 1;
   size = 1;
   repulseDistance = 110;
@@ -175,9 +175,9 @@ export class ParticlesComponent implements AfterViewInit, OnDestroy {
         this.context.beginPath();
         this.context.moveTo(p1.x, p1.y);
         this.context.lineTo(p2.x, p2.y);
-        this.context.stroke();
+        // this.context.stroke();
         this.context.closePath();
-        this.context.strokeStyle = 'rgba(255, 255,255, .1)';
+        // this.context.strokeStyle = 'rgba(255, 255,255, .1)';
       }
     }
   }

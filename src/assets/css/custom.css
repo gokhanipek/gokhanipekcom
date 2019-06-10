@@ -117,5 +117,24 @@
   bottom: 0px;
   right: 0px;
   z-index: 1;
-  background: url('../../assets/images/bg.jpg') center center / cover no-repeat;
+  /* background: url('../../assets/images/bg.jpg') center center / cover no-repeat; */
+}
+
+/* Black hole */
+
+.bg {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #110814;
+}
+.black-hole {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background-color: black;
+  align-self: center;
+  -webkit-box-shadow: 0px 0px 200px -20px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 200px -20px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 200px -20px rgba(255, 255, 255, 1);
 }

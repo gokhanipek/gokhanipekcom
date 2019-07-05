@@ -11,6 +11,8 @@ import { BlogComponent } from './home/blog/blog.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { ParticlesComponent } from './particles/particles.component';
 import { ArticlesComponent } from './home/blog/articles/articles.component';
+import { Routes, RouterModule } from '@angular/router';
+import { WebglComponent } from './home/webgl/webgl.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,23 @@ import { ArticlesComponent } from './home/blog/articles/articles.component';
     BlogComponent,
     ContactComponent,
     ParticlesComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    WebglComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(
+      [
+        { path: 'home', component: HomeComponent},
+        { path: 'webgl', component: WebglComponent},
+        { path: '**', component: HomeComponent  }
+      ]
+  )],
   providers: [],
   bootstrap: [AppComponent],
 })
+
+
 export class AppModule {}

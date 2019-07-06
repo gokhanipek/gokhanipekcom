@@ -13,12 +13,6 @@ import * as THREE from 'three';
 export class WebglComponent {
 
 
-  @HostListener('window:resize', ['$event'])
-  onWindowResize(event) {
-      this.renderer.setSize(event.target.innerWidth, event.target.innerHeight)
-  }
-
-
   @ViewChild('rendererContainer') rendererContainer: ElementRef;
 
   renderer = new THREE.WebGLRenderer();
@@ -32,11 +26,12 @@ export class WebglComponent {
       this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
       this.camera.position.z = 1000;
 
-      const geometry = new THREE.SphereGeometry( 50, 320, 320 );
-      const material = new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true});
-      this.mesh = new THREE.Mesh(geometry, material);
+      var geometry = new THREE.SphereGeometry( 50, 320, 320 );
+      var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+      var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 )
+      this.mesh = new THREE.Mesh(geometry, material );
 
-      this.scene.add(this.mesh);
+      this.scene.add(this.mesh, directionalLight);
   }
 
   ngAfterViewInit() {
@@ -49,6 +44,7 @@ export class WebglComponent {
       window.requestAnimationFrame(() => this.animate());
       this.mesh.rotation.x += 0.01;
       this.mesh.rotation.y += 0.02;
+      this.mesh.rotation.z += 0.01
       this.renderer.render(this.scene, this.camera);
   }
 

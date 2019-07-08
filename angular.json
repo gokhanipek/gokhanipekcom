@@ -40,7 +40,7 @@
               "../node_modules/stats.js/build/stats.min.js",
               "../vendor/VRMLLoader.js",
               "../vendor/OrbitControls.js"
-      
+
             ],
             "es5BrowserSupport": true
           },

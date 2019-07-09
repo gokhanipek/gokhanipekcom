@@ -111,3 +111,6 @@ export class WebglComponent {
 
 
 }
+
+
+//https://jsfiddle.net/f2Lommf5/14006/ working jsfiddle

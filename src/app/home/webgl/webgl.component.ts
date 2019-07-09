@@ -2,18 +2,12 @@ import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular
 import * as THREE from 'three';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 
-
-
-declare const require: (moduleId: string) => any;
-
-
 @Component({
   selector: 'webgl-component',
   template: `
 
   <div #rendererContainer></div>
   `,
-  styles: []
 })
 export class WebglComponent {
 
@@ -25,18 +19,27 @@ export class WebglComponent {
   camera = null;
   mesh = null;
   directionalLight = null;
+  windowHalfX = window.innerWidth / 2;
+  windowHalfY = window.innerHeight / 2;
+  effect = null;
+  mouseX = 0;
+  mouseY = 0;
+
+  constructor(private elementRef:ElementRef) {
+
+    this.elementRef.nativeElement.addEventListener( 'mousemove', this.onDocumentMouseMove, false )
 
 
-  constructor() {
 
-    this.camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000);
+    this.camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 1000 );
+    this.camera.position.z = 500;
     const controls = new OrbitControls(this.camera, this.renderer.domElement);
-    this.camera.position.set( -200, -100, 500 )
+
+
 
     this.scene = new THREE.Scene();
     var background = new THREE.TextureLoader().load('../../../assets/images/stars.jpg');
     this.scene.background = background;
-    this.camera.position.z = 1000;
     var ambientLight = new THREE.AmbientLight( 0xffffff, 1 );// soft white light
     ambientLight.position.z = 1;
     this.scene.add(ambientLight);
@@ -45,18 +48,14 @@ export class WebglComponent {
          map: new THREE.TextureLoader().load('../../../assets/images/venus.jpg'),
         });
     this.mesh = new THREE.Mesh(geometry, material );
-    this.mesh.position.z = -100;
+    this.mesh.position.z = 0;
     this.scene.add(this.mesh);
-
-
+    this.scene.add(controls)
   }
 
   ngAfterViewInit() {
       this.renderer.setSize(window.innerWidth, window.innerHeight);
       this.rendererContainer.nativeElement.appendChild(this.renderer.domElement);
-
-
-
       this.animate();
   }
 
@@ -67,5 +66,22 @@ export class WebglComponent {
       this.mesh.rotation.z += 0.002;
       this.renderer.render(this.scene, this.camera);
   }
+
+
+  @HostListener('window:resize')
+  onResize() {
+    this.windowHalfX = window.innerWidth / 2;
+    this.windowHalfY = window.innerHeight / 2;
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+    this.effect.setSize( window.innerWidth, window.innerHeight );
+}
+
+
+  onDocumentMouseMove( event ) {
+    this.mouseX = ( event.clientX - this.windowHalfX ) * 10;
+    this.mouseY = ( event.clientY - this.windowHalfY ) * 10;
+  }
+
 
 }

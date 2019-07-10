@@ -10,6 +10,8 @@ import { OrbitControls } from 'three-orbitcontrols-ts';
   `,
 })
 export class WebglComponent {
+
+
   @ViewChild('rendererContainer') rendererContainer: ElementRef;
 
   renderer = new THREE.WebGLRenderer();
@@ -23,33 +25,11 @@ export class WebglComponent {
   mouseX = 0;
   mouseY = 0;
 
-
-  mouse = new THREE.Vector2();
-  target = new THREE.Vector2();
-  windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );
-
-
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event) {
-    this.mouse.x = ( event.clientX - this.windowHalf.x );
-    this.mouse.y = ( event.clientY - this.windowHalf.x );
-  }
-
-  onMouseWheel( event ) {
-    this.camera.position.z += event.deltaY * 0.1; // move camera along z-axis
-  }
-
-
-
-
   constructor(private elementRef:ElementRef) {
 
     this.elementRef.nativeElement.addEventListener( 'mousemove', this.onDocumentMouseMove, false )
-    this.camera = new THREE.PerspectiveCamera( 300, window.innerWidth / window.innerHeight, 1, 10000 );
-    this.camera.position.z = 800;
-    this.camera.position.y = 400;
-    this.camera.position.x = 400;
-
+    this.camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 1000 );
+    this.camera.position.z = 500;
 
     const controls = new OrbitControls(this.camera, this.renderer.domElement);
 
@@ -59,7 +39,7 @@ export class WebglComponent {
     var ambientLight = new THREE.AmbientLight( 0xffffff, 1 );// soft white light
     ambientLight.position.z = 1;
     this.scene.add(ambientLight);
-    var geometry = new THREE.SphereGeometry( 100, 30,30 );
+    var geometry = new THREE.SphereGeometry( 100, 320,320 );
     var material = new THREE.MeshPhongMaterial({
          map: new THREE.TextureLoader().load('../../../assets/images/venus.jpg'),
         });
@@ -81,17 +61,7 @@ export class WebglComponent {
       this.mesh.rotation.y += 0.002;
       this.mesh.rotation.z += 0.002;
       this.renderer.render(this.scene, this.camera);
-
-      this.target.x = ( 1 - this.mouse.x ) * -0.0008;
-      this.target.y = ( 1 - this.mouse.y ) * -0.0008;
-
-      this.camera.rotation.x += 0.05 * ( this.target.y - this.camera.rotation.x );
-      this.camera.rotation.y += 0.05 * ( this.target.x - this.camera.rotation.y );
-
-      requestAnimationFrame( this.animate );
-      this.renderer.render( this.scene, this.camera );
-
-      }
+  }
 
 
   @HostListener('window:resize')
@@ -111,6 +81,3 @@ export class WebglComponent {
 
 
 }
-
-
-//https://jsfiddle.net/f2Lommf5/14006/ working jsfiddle

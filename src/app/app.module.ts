@@ -32,9 +32,9 @@ import { WebglComponent } from './home/webgl/webgl.component';
     BrowserAnimationsModule,
     RouterModule.forRoot(
       [
-        { path: 'home', component: HomeComponent},
+        { path: 'home', component: WebglComponent},
         { path: 'webgl', component: WebglComponent},
-        { path: '**', component: HomeComponent  }
+        { path: '**', component: WebglComponent  }
       ]
   )],
   providers: [],

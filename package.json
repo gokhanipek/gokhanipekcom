@@ -23,7 +23,7 @@
     "angular-particle": "^1.0.4",
     "core-js": "^2.6.8",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-particlesjs": "^2.0.1",
     "particlesjs": "^2.2.3",
     "perfect-scrollbar": "^1.4.0",
